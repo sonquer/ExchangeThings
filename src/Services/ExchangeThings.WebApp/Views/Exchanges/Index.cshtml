@@ -1,0 +1,25 @@
+﻿@model ExchangeThings.WebApp.Models.ExchangeModel
+@{
+    ViewData["Title"] = "Exchanges";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model is { })
+{
+    <div class="alert alert-primary" role="alert">
+        Name length: @Model.Name.Length <br />
+        Name: @Model.Name <br />
+    </div>
+}
+
+@using (Html.BeginForm("Post", "Exchanges", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    @:Enter name: @Html.TextBox("Name", Model)
+
+
+    <br />
+    <input type="submit" value="Save" class="btn btn-primary" />
+}

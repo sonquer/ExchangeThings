@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  exchangethings.webapp:
+    image: ${DOCKER_REGISTRY-}exchangethings
+    build:
+      context: .
+      dockerfile: Services/ExchangeThings.WebApp/Dockerfile
