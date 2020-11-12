@@ -8,5 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Exchanges\" />
+    <Folder Include="Api\" />
+    <Folder Include="Api\Controller\" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
-﻿using ExchangeThings.WebApp.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ExchangeThings.WebApp.Controllers
 {
@@ -9,12 +8,6 @@ namespace ExchangeThings.WebApp.Controllers
         public IActionResult Index()
         {
             return View();
-        }
-
-        [HttpPost]
-        public IActionResult Post(ExchangeModel exchangeModel)
-        {
-            return View("Index", exchangeModel);
         }
     }
 }
