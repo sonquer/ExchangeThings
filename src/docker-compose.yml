@@ -6,3 +6,6 @@ services:
     build:
       context: .
       dockerfile: Services/ExchangeThings.WebApp/Dockerfile
+
+  postgres:
+    image: postgres

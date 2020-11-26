@@ -1,0 +1,21 @@
+﻿@model List<ExchangeThings.WebApp.Models.ExchangeModel>
+@{
+    ViewData["Title"] = "Exchanges";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var data in Model)
+{
+    if (data.IsVisible == false)
+    {
+        continue;
+    }
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@data.Name</h5>
+            <p class="card-text">@data.Description</p>
+        </div>
+    </div>
+}

@@ -3,11 +3,23 @@ version: '3.4'
 services:
   exchangethings.webapp:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      EXCHANGE_THINGS_ConnectionStrings__ExchangeThingsDb: "User ID=pgadmin; Password=pgadmin; Host=postgres; Port=5432; Database=exchange_things_db; ApplicationName=ExchangeThings_web_app"
     ports:
       - "80"
       - "443"
     volumes:
       - ~/.aspnet/https:/root/.aspnet/https:ro
       - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+    depends_on:
+      - postgres
+
+  postgres:
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pgadmin
+      POSTGRES_PASSWORD: pgadmin
