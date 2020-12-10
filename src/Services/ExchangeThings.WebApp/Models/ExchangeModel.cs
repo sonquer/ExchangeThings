@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ExchangeThings.WebApp.Models
 {
@@ -11,5 +12,7 @@ namespace ExchangeThings.WebApp.Models
         public string Name { get; set; }
 
         public bool IsVisible { get; set; }
+
+        public DateTime? CreatedAt { get; set; }
     }
 }

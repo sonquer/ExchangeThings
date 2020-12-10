@@ -28,8 +28,10 @@ namespace ExchangeThings.WebApp.Controllers
                 .Select(e => new ExchangeModel {
                     Name = e.Name,
                     Description = e.Description,
-                    IsVisible = e.IsVisible
+                    IsVisible = e.IsVisible,
+                    CreatedAt = e.CreatedAt
                 })
+                .OrderByDescending(e => e.CreatedAt)
                 .ToList();
 
             return View(entities);

@@ -3,15 +3,17 @@ using System;
 using ExchangeThings.WebApp.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ExchangeThings.WebApp.Migrations
 {
     [DbContext(typeof(ExchangeThingsDbContext))]
-    partial class ExchangeThingsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201210193846_Added_created_at_column")]
+    partial class Added_created_at_column
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -12,6 +12,9 @@
     <Folder Include="Api\Controller\" />
     <Folder Include="Database\" />
     <Folder Include="Database\Models\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\LatestItem\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />

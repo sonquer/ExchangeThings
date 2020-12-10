@@ -11,5 +11,7 @@ namespace ExchangeThings.WebApp.Database.Models
         public string Description { get; set; }
 
         public bool IsVisible { get; set; }
+
+        public DateTime CreatedAt { get; set; }
     }
 }

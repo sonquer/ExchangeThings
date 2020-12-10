@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using ExchangeThings.WebApp.Database;
 using ExchangeThings.WebApp.Database.Models;
@@ -22,7 +23,8 @@ namespace ExchangeThings.WebApp.Api.Controllers
             {
                 Name = exchangeModel.Name,
                 Description = exchangeModel.Description,
-                IsVisible = exchangeModel.IsVisible
+                IsVisible = exchangeModel.IsVisible,
+                CreatedAt = DateTime.UtcNow
             });
 
             await _exchangeThingsDbContext.SaveChangesAsync(cancellationToken);
